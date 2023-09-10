@@ -10,6 +10,7 @@ export const Profile = (props)=>{
       src={avatar}
       alt={username}
       class="avatar"
+      width="80"
     />
     <p class="name">{username}</p>
     <p class="tag">@{tag}</p>
