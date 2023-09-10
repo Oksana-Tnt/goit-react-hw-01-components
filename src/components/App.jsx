@@ -1,4 +1,3 @@
-import { Card } from "./Card/Card"
 import { Profile } from "./Profile/Profile"
 import { StatisticsList } from "./StatisticsList/StatisticsList";
 import { Section } from "./Section/Section";
