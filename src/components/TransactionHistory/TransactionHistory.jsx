@@ -1,4 +1,3 @@
-import { Statistic } from "components/Statistic/Statistic";
 import { Transaction } from "components/Transaction/Transaction";
 import PropTypes from 'prop-types';
 
