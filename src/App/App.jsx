@@ -1,17 +1,18 @@
-import { Profile } from "./Profile/Profile"
-import { StatisticsList } from "./StatisticsList/StatisticsList";
-import { Section } from "./Section/Section";
-import { FriendList } from "./FriendList/FriendList";
-import { TransactionHistory } from "./TransactionHistory/TransactionHistory";
+import { Profile } from "../components/Profile/Profile"
+import { StatisticsList } from "../components/StatisticsList/StatisticsList";
+import { Section } from "../components/Section/Section";
+import { FriendList } from "../components/FriendList/FriendList";
+import { TransactionHistory } from "../components/TransactionHistory/TransactionHistory";
 import user from '../user.json';
 import friends from '../friends.json';
 import transactions from '../transactions.json';
 import statistics from '../statistics.json';
+import { Container } from "./App.styled";
 
 
 export const App = () => {
   return (
-    <div>    
+    <Container>    
    <Section title = "Profile">    
     <Profile username={user.username}
       tag={user.tag}
@@ -19,16 +20,16 @@ export const App = () => {
       avatar={user.avatar}
       stats={user.stats} />
       </Section>
-      <Section title="Statistics">
-        <StatisticsList items={statistics}/>
+      <Section title="Upload Stats">
+        <StatisticsList statistics={statistics}/>
       </Section>
       <Section title="Friends">
-        <FriendList items={friends } />        
+        <FriendList friends={friends } />        
       </Section>
       <Section title="Transactions">
         <TransactionHistory items={transactions}/>
       </Section>
-  </div>
+  </Container>
   );
 }
 
