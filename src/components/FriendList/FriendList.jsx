@@ -1,25 +1,37 @@
 import { FriendListItem } from 'components/FriendListItem/FriendListItem';
-import { FriendLi, FriendUl } from './FriendList.styled';
+import { Li, Ul } from './FriendList.styled';
 import PropTypes from 'prop-types';
 
 export const FriendList = ({friends}) =>{
     return (
-        <FriendUl>
+        <Ul>
             {friends.map(({id, avatar, name, isOnline}) => (
-                <FriendLi key={id}>
+                <Li key={id}>
                     <FriendListItem
                         avatar={avatar}
                         name={name}
-                        isOnline={isOnline}/>
-                </FriendLi>
+                        isOnline={isOnline}
+                         />
+                </Li>
             ))}
 
 
-        </FriendUl>
+        </Ul>
      
     );
 }
   
+
 FriendList.propTypes = {
-    id : PropTypes.number,
+    friends: PropTypes.arrayOf(
+        PropTypes.exact(
+            {
+                id: PropTypes.number,
+                avatar: PropTypes.string,
+                name: PropTypes.string,
+                percentage: PropTypes.number,
+                isOnline : PropTypes.bool
+            }
+        )
+    )
 }

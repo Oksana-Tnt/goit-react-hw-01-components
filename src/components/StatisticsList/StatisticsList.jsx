@@ -1,22 +1,22 @@
 import { Statistic } from "components/Statistic/Statistic";
-import css from "./StatisticList.module.css";
 import PropTypes from 'prop-types';
-import { getRandomColor } from "components/utils/GetRandomColor";
+
+import { Li, Ul } from "./StatisticList.styled";
 
 export const StatisticsList = ({statistics}) =>{
     return (
-        <ul className={css.statlist}>
+        <Ul>
             {statistics.map(({id, label, percentage}) => (
-                <li key={id} className={css.item} style={{ backgroundColor: getRandomColor() }}>                
+                <Li key={id}>                
                                       
                     <Statistic
                         label={label}
                         percentage={percentage} />
-                </li>
+                </Li>
             ))}
 
 
-        </ul>
+        </Ul>
      
     );
 }

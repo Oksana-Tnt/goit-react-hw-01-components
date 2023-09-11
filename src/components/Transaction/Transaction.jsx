@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
+import { Td } from './Transaction.styled';
 
 
 export const Transaction = ({type, amount, currency }) => {
     return (
          
         <>
-            <td>{type}</td>
-            <td>{amount}</td>
-            <td>{currency}</td>
+            <Td>{type}</Td>
+            <Td>{amount}</Td>
+            <Td>{currency}</Td>
         </>
         
     
@@ -17,5 +18,5 @@ export const Transaction = ({type, amount, currency }) => {
 Transaction.propTypes = {
     type: PropTypes.string,
     amount: PropTypes.string,
-    currency : PropTypes.bool
+    currency : PropTypes.string
 }
